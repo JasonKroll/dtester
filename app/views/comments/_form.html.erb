@@ -1,4 +1,4 @@
-<%= form_for(comment) do |f| %>
+<%= form_for(comment, html: {class: 'form-horizontal', role: "form"}) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :remark %>
-    <%= f.text_field :remark %>
+    <%= f.text_field :remark, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Save", class: "btn btn-default" %>
   </div>
 <% end %>
