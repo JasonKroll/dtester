@@ -131,15 +131,6 @@
         "strategy": {
           "type": "Recreate",
           "recreateParams": {
-          "pre": {
-              "failurePolicy": "Abort",
-              "execNewPod": {
-                "command": [
-                  "./migrate-database.sh"
-                ],
-                "containerName": "${NAME}"
-              }
-            }
           }
         },
         "triggers": [
