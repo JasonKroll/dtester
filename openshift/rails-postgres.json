@@ -114,7 +114,7 @@
           }
         ],
         "postCommit": {
-          "script": "bundle exec rake test"
+          
         }
       }
     },
@@ -131,6 +131,15 @@
         "strategy": {
           "type": "Recreate",
           "recreateParams": {
+            "pre": {
+                "failurePolicy": "Abort",
+                "execNewPod": {
+                  "command": [
+                    "./migrate-database.sh"
+                  ],
+                  "containerName": "${NAME}"
+                }
+              }
           }
         },
         "triggers": [
@@ -139,7 +148,7 @@
             "imageChangeParams": {
               "automatic": true,
               "containerNames": [
-                "rails-postgresql-example"
+                "${NAME}"
               ],
               "from": {
                 "kind": "ImageStreamTag",
@@ -165,7 +174,7 @@
           "spec": {
             "containers": [
               {
-                "name": "rails-postgresql-example",
+                "name": "${NAME}",
                 "image": " ",
                 "ports": [
                   {
