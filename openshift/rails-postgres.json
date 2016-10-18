@@ -2,7 +2,7 @@
   "kind": "Template",
   "apiVersion": "v1",
   "metadata": {
-    "name": "rails-postgresql-example",
+    "name": "dtester-front",
     "annotations": {
       "description": "An example Rails application with a PostgreSQL database",
       "tags": "quickstart,ruby,rails,postgresql",
@@ -10,7 +10,7 @@
     }
   },
   "labels": {
-    "template": "rails-postgresql-example"
+    "template": "dtester-front"
   },
   "objects": [
     {
